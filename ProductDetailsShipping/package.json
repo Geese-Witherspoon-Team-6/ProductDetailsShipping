@@ -1,0 +1,25 @@
+{
+  "name": "ProductDetailsShipping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "mongoose": "^5.10.6",
+    "nodemon": "^2.0.4",
+    "underscore": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "dev:react": "webpack -d --watch",
+    "db:setup": "node db/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
