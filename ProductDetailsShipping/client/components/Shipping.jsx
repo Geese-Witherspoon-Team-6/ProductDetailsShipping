@@ -86,7 +86,24 @@ class Shipping extends React.Component {
         <div>Exceptions may apply.</div>
       </div>
 
-      <button className="shop-policy-button" onClick={console.log("show shop policies")}>View Shop policies</button>
+      <button className="shop-policy-button" onClick={() => {
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        modal.style.display = "block";
+      }
+      }>View Shop policies</button>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onClick={()=>{
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+          }}>&times;</span>
+          <p>Shop policies for MincingMockingbird</p>
+          <p>Thou shall not steal.</p>
+        </div>
+      </div>
+
     </div>);
   };
 };

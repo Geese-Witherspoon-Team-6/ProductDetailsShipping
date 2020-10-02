@@ -96,6 +96,7 @@ a:active {
 }
 
 .Quantity-Dropdown-Bar {
+  transition: box-shadow 0.5s;
   appearance: none;
   box-shadow: 0 1px 6px 0 rgba(34, 34, 34, 0.15);
   display: block;
@@ -115,7 +116,13 @@ a:active {
   cursor: pointer;
 }
 
+.Quantity-Dropdown-Bar:hover {
+  transition: box-shadow 0.5s;
+  box-shadow: 0 1px 12px 0 #888888;
+}
+
 .Add-To-Cart-Button {
+  transition: 0.5s;
   width: 100% !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   background: none;
@@ -143,6 +150,13 @@ a:active {
   background: #222222;
 }
 
+.Add-To-Cart-Button:hover {
+  transition: opacity 0.5s, -webkit-transform 0.5s, -moz-transform 0.5s;
+  opacity: 0.6;
+  -webkit-transform: scale(1.02,1.02);
+  -moz-transform: scale(1.02,1.02);
+}
+
 .Description-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -158,6 +172,86 @@ a:active {
   font-weight: 300;
   font-size: 16px;
   line-height: 28px;
+
+  transition: height 1s;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  height: 150px;
+  width: 300px;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+.new-product-description {
+  white-space: pre-wrap;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+
+  transition: height 1s;
+  height: 300px;
+  width: 300px;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+#show-product-description-button {
+  cursor: pointer;
+  display: block;
+  margin-top: 6px;
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+#hide-product-description-button {
+  cursor: pointer;
+  display: none;
+  margin-top: 6px;
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+#show-product-description-button:hover {
+  transition: opacity 0.5s, background-color 0.5s;
+  background-color: #E1E4E7;
+  opacity: 0.6;
+}
+
+#hide-product-description-button:hover {
+  transition: opacity 0.5s, background-color 0.5s;
+  background-color: #E1E4E7;
+  opacity: 0.6;
 }
 
 .Shipping-Text {
@@ -209,6 +303,7 @@ a:active {
 }
 
 .Country-Dropdown-Bar {
+  transition: 0.5s;
   appearance: none;
   box-shadow: 0 1px 6px 0 rgba(34, 34, 34, 0.15);
   display: block;
@@ -228,7 +323,13 @@ a:active {
   cursor: pointer;
 }
 
+.Country-Dropdown-Bar:hover {
+  transition: box-shadow 0.5s;
+  box-shadow: 0 1px 12px 0 #888888;
+}
+
 .zipCode {
+  transition: 0.5s;
   appearance: none;
   background: #FFFFFF;
   box-shadow: 0 1px 4px 0 rgba(34, 34, 34, 0.1) inset;
@@ -248,6 +349,15 @@ a:active {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
+}
+
+.zipCode:hover {
+  transition: box-shadow 0.5s;
+  box-shadow: 0 1px 8px 0 #888888;
+}
+
+.zipCode:focus {
+  outline: black;
 }
 
 .Country-Text {
@@ -305,6 +415,13 @@ a:active {
   position: relative;
   text-align: center;
   vertical-align: middle;
+}
+
+.shop-policy-button:hover {
+  transition: opacity 0.5s, background-color 0.5s;
+  background-color: #E1E4E7;
+  color: black;
+  opacity: 0.6;
 }
 
 .Meet-Your-Sellers-Text {
@@ -371,7 +488,9 @@ a:active {
   width: 100% !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   background: none;
-  border: none;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 6px;
   -webkit-tap-highlight-color: transparent;
   border-radius: 24px;
   display: inline-block;
@@ -387,4 +506,50 @@ a:active {
   position: relative;
   text-align: center;
   vertical-align: middle;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.message-creator-button:hover {
+  transition: -webkit-transform 0.5s, -moz-transform 0.5s;
+  -webkit-transform: scale(1.02,1.02);
+  -moz-transform: scale(1.02,1.02);
+}
+
+/* If there is more time I can go back to work some more on the Modal section*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
