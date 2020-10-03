@@ -1,5 +1,13 @@
-# ProductDetailsShipping
-Product Details and Shipping
+# qtsy
+
+> A mockup of a product details page on Etsy
+
+## Related Projects
+
+  - https://github.com/Geese-Witherspoon-Team-6/Reviews
+  - https://github.com/Geese-Witherspoon-Team-6/PhotoCarousel
+  - https://github.com/Geese-Witherspoon-Team-6/StoreFeatured
+  - https://github.com/Geese-Witherspoon-Team-6/ProductDetailsShipping
 
 ## Table of Contents
 
@@ -28,5 +36,6 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
 
 
