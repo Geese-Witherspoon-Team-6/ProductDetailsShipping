@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const Product = require('../db/Products.js');
+const Schemas = require('../db/Schemas.js');
 
 const app = express();
 const PORT = 3000;
@@ -11,16 +11,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.options('*', cors());
-app.use(express.static(__dirname + '/../dist'));
+app.use('/listing/:_id', express.static(__dirname + '/../dist'));
 
-app.get('/listing', function(req, res) {
-  Product.find({}, function(err, data) {
+app.get('/api/product/:_id', function(req, res) {
+  Schemas.Product.find({_id: req.params._id}, function(err, data) {
     if(err) throw err;
     res.json(data);
   })
 });
 
-console.log(__dirname + '/../..');
+app.get('/api/shipping/:to/:zipCode', function(req, res) {
+  console.log(req.params);
+  Schemas.CountryShipping.find({to: req.params.to, zipCode: req.params.zipCode}, function(err, data) {
+    if(err) throw err;
+    res.json(data);
+  })
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

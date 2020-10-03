@@ -4,30 +4,37 @@ import QuantityDropDown from './QuantityDropDown.jsx';
 import ShowLessMore from './ShowLessMore.jsx';
 import Shipping from './Shipping.jsx';
 import MeetSellers from './MeetSellers.jsx';
-import exampleShippingData from './exampleShippingData.js';
 
 class ProductDetails extends React.Component {
   constructor (props) {
     super(props);
+
+    let itemId = Number(location.pathname.split('/')[2]);
+
     this.state = {
+      id: itemId,
       product: {},
       checkout_quantity: 0,
-      checkout_country: '',
-      checkout_zip: 0,
+      to: 'Australia',
+      zipCode: 123456,
+      shippingInfo: {},
     };
 
     this.renderAll = this.renderAll.bind(this);
     this.handleCheckoutQuantity = this.handleCheckoutQuantity.bind(this);
     this.handleCheckoutCountry = this.handleCheckoutCountry.bind(this);
     this.handleCheckoutZip = this.handleCheckoutZip.bind(this);
+    this.renderStars = this.renderStars.bind(this);
+    this.renderShipping = this.renderShipping.bind(this);
   }
 
   componentDidMount() {
     this.renderAll();
+    this.renderShipping();
   }
 
   renderAll() {
-    fetch('/listing')
+    fetch(`/api/product/${this.state.id}`)
       .then(res => res.json())
       .then(data => this.setState({product: data[0]}));
   }
@@ -38,16 +45,36 @@ class ProductDetails extends React.Component {
     });
   }
 
-  handleCheckoutCountry(country) {
+  handleCheckoutCountry(event) {
     this.setState({
-      checkout_country: country
+      to: event.target.value
+    }, () => {
+      if (this.state.zipCode.length !== 6) {
+        alert('Please input a valid Zip Code');
+      } else {
+        this.renderShipping();
+      }
     });
   }
 
-  handleCheckoutZip(zip) {
+  handleCheckoutZip(event) {
     this.setState({
-      checkout_zip: zip
+      zipCode: event.target.value
     });
+  }
+
+  renderStars(review) {
+    var starString = '';
+    for (var i = 0; i < review; i++) {
+      starString = starString + '&#9733;';
+    }
+    return {__html: starString};
+  }
+
+  renderShipping() {
+    fetch(`/api/shipping/${this.state.to}/${this.state.zipCode}`)
+    .then(res => res.json())
+    .then(data => this.setState({shippingInfo: data[0]}));
   }
 
   render() {
@@ -57,7 +84,7 @@ class ProductDetails extends React.Component {
         <div className="CreatorName-Box-Top"> <a href="#" className="CreatorName-Top">{this.state.product.creator}</a> </div>
         <div className="CreatorSales-Box-Top"> <a href="#" className="CreatorSales-Top">{this.state.product.totalSales + ' sales'}</a>
         <div className="star">
-          <span className="filled">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span className="filled" dangerouslySetInnerHTML={this.renderStars(this.state.product.reviews)}></span>
         </div>
         </div>
 
@@ -69,8 +96,8 @@ class ProductDetails extends React.Component {
 
         <QuantityDropDown handleCheckoutQuantity={this.handleCheckoutQuantity}/>
         <ShowLessMore product={this.state.product}/>
-        <Shipping shipping={exampleShippingData} handleCheckoutCountry={this.handleCheckoutCountry} handleCheckoutZip={this.handleCheckoutZip}/>
-        <MeetSellers creator={this.state.product.creator}/>
+        <Shipping shippingInfo={this.state.shippingInfo} handleCheckoutCountry={this.handleCheckoutCountry} handleCheckoutZip={this.handleCheckoutZip}/>
+        <MeetSellers creator={this.state.product.creator} creatorImgUrl={this.state.product.creatorImgUrl}/>
       </div>
     );
   }

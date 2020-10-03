@@ -10,6 +10,7 @@ const ProductSchema = new mongoose.Schema({
   reviews: Number,
   inStock: Boolean,
   creator: String,
+  creatorImgUrl: String,
   quantity: Number,
   handmade: Boolean,
   description: String,
@@ -17,6 +18,17 @@ const ProductSchema = new mongoose.Schema({
   from: String,
 })
 
+const CountryShippingSchema = new mongoose.Schema({
+  _id: Number,
+  ready: String,
+  from: String,
+  to: String,
+  zipCode: Number,
+  cost: Number,
+})
+
 const Product = mongoose.model('Product', ProductSchema);
 
-module.exports = Product;
+const CountryShipping = mongoose.model('CountryShipping', CountryShippingSchema);
+
+module.exports = {Product, CountryShipping};

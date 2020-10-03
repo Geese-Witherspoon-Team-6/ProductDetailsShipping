@@ -3,7 +3,7 @@ import React from 'react';
 const ShowLessMore = (props) => (<div>
   <div className="Description-Text">Description</div>
 
-  <div class="product-description" id="showmoreless">
+  <div className="product-description" id="showmoreless">
     {props.product.description}
   </div>
 

@@ -1,5 +1,5 @@
 const db  = require('./index.js');
-const Product = require('./Products.js');
+const Schemas = require('./Schemas.js');
 
 const sampleProducts = [
   { _id: 1,
@@ -9,6 +9,7 @@ const sampleProducts = [
     reviews: 5,
     inStock: true,
     creator: 'MincingMockingbird',
+    creatorImgUrl: 'https://i.etsystatic.com/iusa/929de3/22170658/iusa_75x75.22170658_8fxe.jpg?version=0',
     quantity: 563,
     handmade: true,
     description: 'What\'s the square root of "Oh, sh-t?" \n\n 2.125" x 3.125" \n\n Metal shell \n\n Mylar/UV protective cover \n\n Flat magnetic back \n\n ©2017 The Mincing Mockingbird™ \n\n mm754ris',
@@ -21,6 +22,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Della Schiller',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=1',
       quantity: 38487,
       handmade: true,
       description:
@@ -34,6 +36,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: false,
       creator: 'John Runte',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=2',
       quantity: 39091,
       handmade: true,
       description:
@@ -47,6 +50,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Marion Zboncak',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=3',
       quantity: 52841,
       handmade: false,
       description:
@@ -60,6 +64,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: false,
       creator: 'Kathryn Terry',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=4',
       quantity: 50607,
       handmade: false,
       description:
@@ -73,6 +78,7 @@ const sampleProducts = [
       reviews: 0,
       inStock: false,
       creator: 'Bryan Witting',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=5',
       quantity: 44270,
       handmade: false,
       description:
@@ -86,6 +92,7 @@ const sampleProducts = [
       reviews: 0,
       inStock: true,
       creator: 'Heather Barrows',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=6',
       quantity: 76309,
       handmade: false,
       description:
@@ -99,6 +106,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: false,
       creator: 'Mrs. Virginia Kreiger',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=7',
       quantity: 38463,
       handmade: true,
       description:
@@ -112,6 +120,7 @@ const sampleProducts = [
       reviews: 4,
       inStock: false,
       creator: 'Jay Bogan',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=8',
       quantity: 12322,
       handmade: false,
       description:
@@ -125,6 +134,7 @@ const sampleProducts = [
       reviews: 3,
       inStock: true,
       creator: 'Marlon Pollich',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=9',
       quantity: 60201,
       handmade: true,
       description:
@@ -138,6 +148,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Alice Feeney',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=10',
       quantity: 7990,
       handmade: true,
       description:
@@ -151,6 +162,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Theresa Brakus',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=11',
       quantity: 81899,
       handmade: true,
       description:
@@ -164,6 +176,7 @@ const sampleProducts = [
       reviews: 4,
       inStock: false,
       creator: 'Katherine Kozey',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=12',
       quantity: 60021,
       handmade: false,
       description: 'Nesciunt minus quae. Voluptatem vel ut.',
@@ -176,6 +189,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: true,
       creator: 'Jimmie Green',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=13',
       quantity: 8938,
       handmade: true,
       description:
@@ -189,6 +203,7 @@ const sampleProducts = [
       reviews: 0,
       inStock: true,
       creator: 'Sylvia Homenick',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=14',
       quantity: 17874,
       handmade: false,
       description:
@@ -202,6 +217,7 @@ const sampleProducts = [
       reviews: 4,
       inStock: false,
       creator: 'Thomas Keeling',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=15',
       quantity: 51570,
       handmade: true,
       description:
@@ -215,6 +231,7 @@ const sampleProducts = [
       reviews: 4,
       inStock: true,
       creator: 'Amos West',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=16',
       quantity: 24340,
       handmade: false,
       description:
@@ -228,6 +245,7 @@ const sampleProducts = [
       reviews: 3,
       inStock: true,
       creator: 'Dr. Lyle Tillman',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=17',
       quantity: 54912,
       handmade: true,
       description:
@@ -241,6 +259,7 @@ const sampleProducts = [
       reviews: 5,
       inStock: true,
       creator: 'Laura Hyatt IV',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=18',
       quantity: 95326,
       handmade: false,
       description:
@@ -254,6 +273,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: false,
       creator: 'Javier Langworth',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=19',
       quantity: 49617,
       handmade: false,
       description:
@@ -267,6 +287,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Kenny Collier',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=20',
       quantity: 70973,
       handmade: false,
       description:
@@ -280,6 +301,7 @@ const sampleProducts = [
       reviews: 4,
       inStock: true,
       creator: 'Beth Goldner V',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=21',
       quantity: 81182,
       handmade: false,
       description:
@@ -293,6 +315,7 @@ const sampleProducts = [
       reviews: 0,
       inStock: true,
       creator: 'Diana Haag',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=22',
       quantity: 64843,
       handmade: true,
       description:
@@ -306,6 +329,7 @@ const sampleProducts = [
       reviews: 5,
       inStock: false,
       creator: 'Kristy Okuneva',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=23',
       quantity: 89953,
       handmade: false,
       description:
@@ -319,6 +343,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: true,
       creator: 'Mrs. Ebony Toy',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=24',
       quantity: 99606,
       handmade: false,
       description:
@@ -332,6 +357,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: true,
       creator: 'May Smitham',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=25',
       quantity: 29908,
       handmade: false,
       description:
@@ -345,6 +371,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Rose VonRueden',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=26',
       quantity: 56560,
       handmade: false,
       description:
@@ -358,6 +385,7 @@ const sampleProducts = [
       reviews: 5,
       inStock: true,
       creator: 'Della McKenzie',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=27',
       quantity: 70623,
       handmade: false,
       description:
@@ -371,6 +399,7 @@ const sampleProducts = [
       reviews: 2,
       inStock: false,
       creator: 'Julius Doyle',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=28',
       quantity: 11958,
       handmade: true,
       description:
@@ -384,6 +413,7 @@ const sampleProducts = [
       reviews: 3,
       inStock: true,
       creator: 'Faye Powlowski V',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=29',
       quantity: 49176,
       handmade: false,
       description:
@@ -397,6 +427,7 @@ const sampleProducts = [
       reviews: 5,
       inStock: false,
       creator: 'Tiffany Hermann',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=30',
       quantity: 7299,
       handmade: false,
       description:
@@ -410,6 +441,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Bertha Frami DDS',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=31',
       quantity: 71638,
       handmade: false,
       description:
@@ -423,6 +455,7 @@ const sampleProducts = [
       reviews: 1,
       inStock: false,
       creator: 'Mrs. Tamara Rolfson',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=32',
       quantity: 83739,
       handmade: false,
       description:
@@ -436,6 +469,7 @@ const sampleProducts = [
       reviews: 5,
       inStock: false,
       creator: 'Todd Ryan',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=33',
       quantity: 95708,
       handmade: true,
       description:
@@ -449,6 +483,7 @@ const sampleProducts = [
       reviews: 3,
       inStock: true,
       creator: 'Joyce Hermann Sr.',
+      creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=34',
       quantity: 74811,
       handmade: true,
       description:
@@ -462,6 +497,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: true,
         creator: 'Joanna Kihn',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=35',
         quantity: 74361,
         handmade: false,
         description:
@@ -475,6 +511,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: true,
         creator: 'Rick Corkery',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=36',
         quantity: 18962,
         handmade: false,
         description:
@@ -488,6 +525,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: true,
         creator: 'Danielle Satterfield',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=37',
         quantity: 22400,
         handmade: false,
         description:
@@ -501,6 +539,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Greg Wehner',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=38',
         quantity: 64698,
         handmade: true,
         description:
@@ -514,6 +553,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: true,
         creator: 'Allison Stark',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=39',
         quantity: 29836,
         handmade: false,
         description:
@@ -527,6 +567,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Krista Morar',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=40',
         quantity: 48604,
         handmade: false,
         description:
@@ -540,6 +581,7 @@ const sampleProducts = [
         reviews: 0,
         inStock: false,
         creator: 'Martin Rau',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=41',
         quantity: 835,
         handmade: false,
         description:
@@ -553,6 +595,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Kimberly Bednar',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=42',
         quantity: 50499,
         handmade: false,
         description:
@@ -566,6 +609,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: true,
         creator: 'Dr. Gabriel Champlin',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=43',
         quantity: 41220,
         handmade: false,
         description:
@@ -579,6 +623,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: false,
         creator: 'Alfredo Satterfield',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=44',
         quantity: 63689,
         handmade: true,
         description:
@@ -592,6 +637,7 @@ const sampleProducts = [
         reviews: 1,
         inStock: true,
         creator: 'Beth Olson',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=45',
         quantity: 48126,
         handmade: true,
         description:
@@ -605,6 +651,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: true,
         creator: 'Ramon Feest',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=46',
         quantity: 99257,
         handmade: false,
         description:
@@ -618,6 +665,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: true,
         creator: 'Yvonne Hauck II',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=47',
         quantity: 19322,
         handmade: false,
         description:
@@ -631,6 +679,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: true,
         creator: 'Clyde Osinski',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=48',
         quantity: 10045,
         handmade: true,
         description:
@@ -644,6 +693,7 @@ const sampleProducts = [
         reviews: 0,
         inStock: true,
         creator: 'Dr. Everett Denesik',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=49',
         quantity: 39911,
         handmade: false,
         description:
@@ -657,6 +707,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: false,
         creator: 'Miss Dianna Sipes',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=50',
         quantity: 27082,
         handmade: true,
         description:
@@ -670,6 +721,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: true,
         creator: 'Doug Schoen',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=51',
         quantity: 54395,
         handmade: false,
         description:
@@ -683,6 +735,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: false,
         creator: 'Arthur Weimann',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=52',
         quantity: 81246,
         handmade: true,
         description:
@@ -696,6 +749,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: false,
         creator: 'Wilfred Huels II',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=53',
         quantity: 86795,
         handmade: false,
         description:
@@ -709,6 +763,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: false,
         creator: 'Bryant Moen',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=54',
         quantity: 85563,
         handmade: false,
         description: 'Facilis quibusdam aliquid facere. Eum autem non.',
@@ -721,6 +776,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: false,
         creator: 'Harriet Kuhlman',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=55',
         quantity: 80152,
         handmade: true,
         description:
@@ -734,6 +790,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: false,
         creator: 'Alexander Ziemann',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=56',
         quantity: 3018,
         handmade: false,
         description:
@@ -747,6 +804,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: false,
         creator: 'Rafael Funk',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=57',
         quantity: 9604,
         handmade: true,
         description:
@@ -760,6 +818,7 @@ const sampleProducts = [
         reviews: 0,
         inStock: true,
         creator: 'Dr. Keith Gaylord',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=58',
         quantity: 98430,
         handmade: false,
         description:
@@ -773,6 +832,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Salvador Leffler',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=59',
         quantity: 10386,
         handmade: false,
         description:
@@ -786,6 +846,7 @@ const sampleProducts = [
         reviews: 5,
         inStock: false,
         creator: 'Sandra Pagac',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=60',
         quantity: 33971,
         handmade: true,
         description:
@@ -799,6 +860,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: true,
         creator: 'Tomas Keeling',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=61',
         quantity: 89768,
         handmade: true,
         description:
@@ -812,6 +874,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: true,
         creator: 'Joseph Hagenes',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=62',
         quantity: 26294,
         handmade: false,
         description:
@@ -825,6 +888,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: true,
         creator: 'Van Treutel',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=63',
         quantity: 65498,
         handmade: false,
         description:
@@ -838,6 +902,7 @@ const sampleProducts = [
         reviews: 1,
         inStock: false,
         creator: 'Ross Schultz',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=64',
         quantity: 30303,
         handmade: true,
         description:
@@ -851,6 +916,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Jenna Aufderhar',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=65',
         quantity: 67245,
         handmade: true,
         description:
@@ -864,6 +930,7 @@ const sampleProducts = [
         reviews: 3,
         inStock: true,
         creator: 'Darrell Kuhic',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=66',
         quantity: 3841,
         handmade: false,
         description:
@@ -877,6 +944,7 @@ const sampleProducts = [
         reviews: 4,
         inStock: true,
         creator: 'Shelley Miller',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=67',
         quantity: 32180,
         handmade: true,
         description:
@@ -890,6 +958,7 @@ const sampleProducts = [
         reviews: 2,
         inStock: false,
         creator: 'Wilbur Harris',
+        creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=68',
         quantity: 19788,
         handmade: false,
         description:
@@ -903,6 +972,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Charles Monahan',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=69',
           quantity: 73429,
           handmade: true,
           description:
@@ -916,6 +986,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Irma Gislason',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=70',
           quantity: 7676,
           handmade: false,
           description:
@@ -929,6 +1000,7 @@ const sampleProducts = [
           reviews: 3,
           inStock: false,
           creator: 'Dr. Jermaine Moore',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=71',
           quantity: 10801,
           handmade: false,
           description:
@@ -942,6 +1014,7 @@ const sampleProducts = [
           reviews: 0,
           inStock: true,
           creator: 'Noah Graham',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=72',
           quantity: 56640,
           handmade: true,
           description:
@@ -955,6 +1028,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Toni Huels',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=73',
           quantity: 47392,
           handmade: true,
           description:
@@ -968,6 +1042,7 @@ const sampleProducts = [
           reviews: 5,
           inStock: false,
           creator: 'Eric Ferry',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=74',
           quantity: 74803,
           handmade: true,
           description:
@@ -981,6 +1056,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Adrienne Kautzer',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=75',
           quantity: 26135,
           handmade: false,
           description:
@@ -994,6 +1070,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: false,
           creator: 'Dennis Roberts',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=76',
           quantity: 16686,
           handmade: true,
           description:
@@ -1007,6 +1084,7 @@ const sampleProducts = [
           reviews: 2,
           inStock: true,
           creator: 'Damon Dietrich',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=77',
           quantity: 74359,
           handmade: true,
           description:
@@ -1020,6 +1098,7 @@ const sampleProducts = [
           reviews: 3,
           inStock: true,
           creator: 'Christy Wintheiser II',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=78',
           quantity: 42918,
           handmade: true,
           description:
@@ -1033,6 +1112,7 @@ const sampleProducts = [
           reviews: 0,
           inStock: true,
           creator: 'Lynne Schamberger',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=79',
           quantity: 68806,
           handmade: false,
           description:
@@ -1046,6 +1126,7 @@ const sampleProducts = [
           reviews: 5,
           inStock: true,
           creator: 'Clifford Klein',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=80',
           quantity: 49526,
           handmade: true,
           description:
@@ -1059,6 +1140,7 @@ const sampleProducts = [
           reviews: 3,
           inStock: false,
           creator: 'Jo Russel',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=81',
           quantity: 81053,
           handmade: true,
           description:
@@ -1072,6 +1154,7 @@ const sampleProducts = [
           reviews: 4,
           inStock: false,
           creator: 'Arthur Glover',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=82',
           quantity: 98493,
           handmade: true,
           description:
@@ -1085,6 +1168,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: false,
           creator: 'Carl Bode',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=83',
           quantity: 77788,
           handmade: false,
           description:
@@ -1098,6 +1182,7 @@ const sampleProducts = [
           reviews: 2,
           inStock: true,
           creator: 'Wilbur Ruecker PhD',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=84',
           quantity: 12726,
           handmade: true,
           description:
@@ -1111,6 +1196,7 @@ const sampleProducts = [
           reviews: 5,
           inStock: false,
           creator: 'Gertrude Kutch',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=85',
           quantity: 15873,
           handmade: true,
           description:
@@ -1124,6 +1210,7 @@ const sampleProducts = [
           reviews: 3,
           inStock: false,
           creator: 'Lori Buckridge',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=86',
           quantity: 31662,
           handmade: true,
           description:
@@ -1137,6 +1224,7 @@ const sampleProducts = [
           reviews: 4,
           inStock: true,
           creator: 'Kurt White',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=87',
           quantity: 60959,
           handmade: false,
           description:
@@ -1150,6 +1238,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Rose Funk',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=88',
           quantity: 94811,
           handmade: true,
           description:
@@ -1163,6 +1252,7 @@ const sampleProducts = [
           reviews: 2,
           inStock: false,
           creator: 'Miss Sonja West',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=89',
           quantity: 87160,
           handmade: false,
           description:
@@ -1176,6 +1266,7 @@ const sampleProducts = [
           reviews: 3,
           inStock: true,
           creator: 'Simon Herman',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=90',
           quantity: 98320,
           handmade: false,
           description:
@@ -1189,6 +1280,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: true,
           creator: 'Francis Breitenberg',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=91',
           quantity: 58460,
           handmade: true,
           description:
@@ -1202,6 +1294,7 @@ const sampleProducts = [
           reviews: 4,
           inStock: true,
           creator: 'Justin Daugherty',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=92',
           quantity: 24547,
           handmade: false,
           description:
@@ -1215,6 +1308,7 @@ const sampleProducts = [
           reviews: 2,
           inStock: false,
           creator: 'Paul Rutherford II',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=93',
           quantity: 67756,
           handmade: true,
           description:
@@ -1228,6 +1322,7 @@ const sampleProducts = [
           reviews: 0,
           inStock: false,
           creator: 'Rosa Kihn',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=94',
           quantity: 8543,
           handmade: false,
           description:
@@ -1241,6 +1336,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: false,
           creator: 'Gregg Kris',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=95',
           quantity: 20408,
           handmade: false,
           description:
@@ -1254,6 +1350,7 @@ const sampleProducts = [
           reviews: 4,
           inStock: true,
           creator: 'Crystal Walter',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=96',
           quantity: 21769,
           handmade: false,
           description:
@@ -1267,6 +1364,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: false,
           creator: 'Mabel Wolff DDS',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=97',
           quantity: 13179,
           handmade: false,
           description:
@@ -1280,6 +1378,7 @@ const sampleProducts = [
           reviews: 1,
           inStock: false,
           creator: 'Mr. Jose Goyette',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=98',
           quantity: 23063,
           handmade: false,
           description:
@@ -1293,6 +1392,7 @@ const sampleProducts = [
           reviews: 4,
           inStock: false,
           creator: 'Cheryl Torphy DDS',
+          creatorImgUrl: 'https://source.unsplash.com/random/200x200?sig=99',
           quantity: 60604,
           handmade: false,
           description:
@@ -1301,16 +1401,118 @@ const sampleProducts = [
           from: 'East Daisytown' }
 ];
 
+
+//<--------------------------------------------------------------------->
+
+const sampleShippingData = [
+  {
+    _id: 1,
+    ready: '1-2 business days',
+    from: 'United States',
+    to: 'Australia',
+    zipCode: 123456,
+    cost: 14,
+  },
+  {
+    _id: 2,
+    ready: '2-3 business days',
+    from: 'United States',
+    to: 'Canada',
+    zipCode: 123456,
+    cost: 16,
+  },
+  {
+    _id: 3,
+    ready: '4 business days',
+    from: 'United States',
+    to: 'France',
+    zipCode: 123456,
+    cost: 18,
+  },
+  {
+    _id: 4,
+    ready: '1 business days',
+    from: 'United States',
+    to: 'Germany',
+    zipCode: 123456,
+    cost: 20,
+  },
+  {
+    _id: 5,
+    ready: '5 business days',
+    from: 'United States',
+    to: 'Greece',
+    zipCode: 123456,
+    cost: 22,
+  },
+  {
+    _id: 6,
+    ready: '3 business days',
+    from: 'United States',
+    to: 'Australia',
+    zipCode: 654321,
+    cost: 15,
+  },
+  {
+    _id: 7,
+    ready: '4 business days',
+    from: 'United States',
+    to: 'Canada',
+    zipCode: 654321,
+    cost: 17,
+  },
+  {
+    _id: 8,
+    ready: '6 business days',
+    from: 'United States',
+    to: 'France',
+    zipCode: 654321,
+    cost: 19,
+  },
+  {
+    _id: 9,
+    ready: '10 business days',
+    from: 'United States',
+    to: 'Germany',
+    zipCode: 654321,
+    cost: 21,
+  },
+  {
+    _id: 10,
+    ready: '11 business days',
+    from: 'United States',
+    to: 'Greece',
+    zipCode: 654321,
+    cost: 23,
+  }
+]
+
+//<--------------------------------------------------------------------->
+
 const insertSampleProducts = function() {
-  Product.create(sampleProducts)
+  Schemas.Product.create(sampleProducts)
     .then(() => db.disconnect());
 };
 
 insertSampleProducts();
 
+const insertSampleShippingData = function() {
+  Schemas.CountryShipping.create(sampleShippingData)
+    .then(() => db.disconnect());
+};
+
+insertSampleShippingData();
+
 // const removeSampleProducts = function() {
-//   Product.remove({})
+//   Schemas.Product.remove({})
 //     .then(() => db.disconnect());
 // };
 
 // removeSampleProducts();
+
+// const removeSampleShippingData = function() {
+//   Schemas.CountryShipping.remove({})
+//     .then(() => db.disconnect());
+// };
+
+// removeSampleShippingData();
