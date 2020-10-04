@@ -78,7 +78,6 @@ class ProductDetails extends React.Component {
   }
 
   render() {
-    console.log(this.state.product);
     return (
       <div>
         <div className="CreatorName-Box-Top"> <a href="#" className="CreatorName-Top">{this.state.product.creator}</a> </div>

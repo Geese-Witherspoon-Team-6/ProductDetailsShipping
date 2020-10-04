@@ -8,7 +8,7 @@ const MeetSellers = (props) => (
       <div className="Seller-Username-Bottom">{props.creator}</div>
       <div className="Seller-Details">Owner of <a href="#" className="MeetSellers-Creator">{props.creator}</a></div>
     </div>
-    <button className="message-creator-button" onClick={console.log("message creator")}>Message</button>
+    <button className="message-creator-button">Message</button>
   </div>
 );
 
