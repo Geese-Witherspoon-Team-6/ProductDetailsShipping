@@ -1,32 +1,32 @@
-body {
+#productDetails, body {
   font-family: sans-serif, arial;
 }
 
-a {
+#productDetails, a {
   color: black;
 }
 
-a:link {
+#productDetails, a:link {
   text-decoration: none;
 }
 
-a:visited {
+#productDetails, a:visited {
   text-decoration: none;
 }
 
-a:hover {
+#productDetails, a:hover {
   text-decoration: underline;
 }
 
-a:active {
+#productDetails, a:active {
   text-decoration: underline;
 }
 
-.CreatorName-Box-Top {
+#productDetails, .CreatorName-Box-Top {
   margin-bottom: none;
 }
 
-.CreatorName-Top {
+#productDetails, .CreatorName-Top {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -34,12 +34,12 @@ a:active {
   text-align: left;
 }
 
-.CreatorSales-Box-Top {
+#productDetails, .CreatorSales-Box-Top {
   margin-top: none;
   margin-bottom: 12px;
 }
 
-.CreatorSales-Top {
+#productDetails, .CreatorSales-Top {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-size: 14px;
   line-height: 1.4;
@@ -49,17 +49,17 @@ a:active {
   width: 87px;
 }
 
-.star {
+#productDetails, .star {
   position: relative;
   top: -3px;
 }
 
-.filled {
+#productDetails, .filled {
   color:#000000;
   width: 12.8px;
 }
 
-.ProductTitle-Box-Top {
+#productDetails, .ProductTitle-Box-Top {
   font-family: "Guardian-EgypTT",serif;
   font-weight: 300;
   letter-spacing: 0.35px;
@@ -69,7 +69,7 @@ a:active {
   margin-bottom: 6px !important;
 }
 
-.Product-Price {
+#productDetails, .Product-Price {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 500;
   font-size: 24px;
@@ -77,7 +77,7 @@ a:active {
   margin-right: 12px !important;
 }
 
-.GST-Included {
+#productDetails, .GST-Included {
   color: #595959 !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -87,7 +87,7 @@ a:active {
   padding-top: 6px !important;
 }
 
-.Quantity-Dropdown-Label {
+#productDetails, .Quantity-Dropdown-Label {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -95,7 +95,7 @@ a:active {
   margin-bottom: 4px;
 }
 
-.Quantity-Dropdown-Bar {
+#productDetails, .Quantity-Dropdown-Bar {
   transition: box-shadow 0.5s;
   appearance: none;
   box-shadow: 0 1px 6px 0 rgba(34, 34, 34, 0.15);
@@ -116,12 +116,12 @@ a:active {
   cursor: pointer;
 }
 
-.Quantity-Dropdown-Bar:hover {
+#productDetails, .Quantity-Dropdown-Bar:hover {
   transition: box-shadow 0.5s;
   box-shadow: 0 1px 12px 0 #888888;
 }
 
-.Add-To-Cart-Button {
+#productDetails, .Add-To-Cart-Button {
   transition: 0.5s;
   width: 100% !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
@@ -150,14 +150,14 @@ a:active {
   background: #222222;
 }
 
-.Add-To-Cart-Button:hover {
+#productDetails, .Add-To-Cart-Button:hover {
   transition: opacity 0.5s, -webkit-transform 0.5s, -moz-transform 0.5s;
   opacity: 0.6;
   -webkit-transform: scale(1.02,1.02);
   -moz-transform: scale(1.02,1.02);
 }
 
-.Description-Text {
+#productDetails, .Description-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -166,7 +166,7 @@ a:active {
   margin-bottom: 4px;
 }
 
-.product-description {
+#productDetails, .product-description {
   white-space: pre-wrap;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -182,7 +182,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.new-product-description {
+#productDetails, .new-product-description {
   white-space: pre-wrap;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -196,7 +196,7 @@ a:active {
   box-sizing: border-box;
 }
 
-#show-product-description-button {
+#productDetails, #show-product-description-button {
   cursor: pointer;
   display: block;
   margin-top: 6px;
@@ -219,7 +219,7 @@ a:active {
   margin: 0 auto;
 }
 
-#hide-product-description-button {
+#productDetails, #hide-product-description-button {
   cursor: pointer;
   display: none;
   margin-top: 6px;
@@ -242,19 +242,19 @@ a:active {
   margin: 0 auto;
 }
 
-#show-product-description-button:hover {
+#productDetails, #show-product-description-button:hover {
   transition: opacity 0.5s, background-color 0.5s;
   background-color: #E1E4E7;
   opacity: 0.6;
 }
 
-#hide-product-description-button:hover {
+#productDetails, #hide-product-description-button:hover {
   transition: opacity 0.5s, background-color 0.5s;
   background-color: #E1E4E7;
   opacity: 0.6;
 }
 
-.Shipping-Text {
+#productDetails, .Shipping-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -263,7 +263,7 @@ a:active {
   -webkit-font-smoothing: antialiased;
 }
 
-.Shipping-Text-2 {
+#productDetails, .Shipping-Text-2 {
   line-height: 24px;
   font-family: "Guardian-EgypTT",serif;
   font-weight: 300;
@@ -273,7 +273,7 @@ a:active {
   text-align: left;
 }
 
-.Ready-In-Container {
+#productDetails, .Ready-In-Container {
   box-sizing: border-box;
   flex-grow: 1;
   flex-basis: 50%;
@@ -284,7 +284,7 @@ a:active {
   float: left;
 }
 
-.From-Container {
+#productDetails, .From-Container {
   box-sizing: border-box;
   flex-grow: 1;
   flex-basis: 50%;
@@ -295,14 +295,14 @@ a:active {
   float: left;
 }
 
-.Cost-To-Ship-Container {
+#productDetails, .Cost-To-Ship-Container {
   box-sizing: border-box;
   flex-grow: 1;
   flex-basis: 50%;
   max-width: 50%;
 }
 
-.Country-Dropdown-Bar {
+#productDetails, .Country-Dropdown-Bar {
   transition: 0.5s;
   appearance: none;
   box-shadow: 0 1px 6px 0 rgba(34, 34, 34, 0.15);
@@ -323,12 +323,12 @@ a:active {
   cursor: pointer;
 }
 
-.Country-Dropdown-Bar:hover {
+#productDetails, .Country-Dropdown-Bar:hover {
   transition: box-shadow 0.5s;
   box-shadow: 0 1px 12px 0 #888888;
 }
 
-.zipCode {
+#productDetails, .zipCode {
   transition: 0.5s;
   appearance: none;
   background: #FFFFFF;
@@ -351,23 +351,23 @@ a:active {
   box-sizing: border-box;
 }
 
-.zipCode:hover {
+#productDetails, .zipCode:hover {
   transition: box-shadow 0.5s;
   box-shadow: 0 1px 8px 0 #888888;
 }
 
-.zipCode:focus {
+#productDetails, .zipCode:focus {
   outline: black;
 }
 
-.Country-Text {
+#productDetails, .Country-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 28px;
 }
 
-.Country-Bar-Container {
+#productDetails, .Country-Bar-Container {
   border: 0;
   padding: 0;
   margin-bottom: 12px !important;
@@ -375,7 +375,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.Zip-Bar-Container {
+#productDetails, .Zip-Bar-Container {
   border: 0;
   padding: 0;
   margin-bottom: 12px !important;
@@ -383,7 +383,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.Return-Text-Bottom {
+#productDetails, .Return-Text-Bottom {
   line-height: 24px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -391,7 +391,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.shop-policy-button {
+#productDetails, .shop-policy-button {
   margin-left: -15px;
   color: #222222;
   font-size: 13px;
@@ -417,14 +417,14 @@ a:active {
   vertical-align: middle;
 }
 
-.shop-policy-button:hover {
+#productDetails, .shop-policy-button:hover {
   transition: opacity 0.5s, background-color 0.5s;
   background-color: #E1E4E7;
   color: black;
   opacity: 0.6;
 }
 
-.Meet-Your-Sellers-Text {
+#productDetails, .Meet-Your-Sellers-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -434,7 +434,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.Seller-Image {
+#productDetails, .Seller-Image {
   height: 80px !important;
   width: 75px !important;
   border-radius: 50% !important;
@@ -444,7 +444,7 @@ a:active {
   float: left;
 }
 
-.Seller-Username-Bottom {
+#productDetails, .Seller-Username-Bottom {
   line-height: 24px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -456,7 +456,7 @@ a:active {
   left: 10px;
 }
 
-.Seller-Details {
+#productDetails, .Seller-Details {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -469,7 +469,7 @@ a:active {
   left: 10px;
 }
 
-.MeetSellers-Creator{
+#productDetails, .MeetSellers-Creator{
   text-decoration: underline;
   transition: opacity 200ms ease-out;
   position: relative;
@@ -484,7 +484,7 @@ a:active {
   -webkit-font-smoothing: antialiased;
 }
 
-.message-creator-button {
+#productDetails, .message-creator-button {
   width: 100% !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   background: none;
@@ -510,7 +510,7 @@ a:active {
   margin-top: 12px;
 }
 
-.message-creator-button:hover {
+#productDetails, .message-creator-button:hover {
   transition: -webkit-transform 0.5s, -moz-transform 0.5s;
   -webkit-transform: scale(1.02,1.02);
   -moz-transform: scale(1.02,1.02);
@@ -518,7 +518,7 @@ a:active {
 
 /* If there is more time I can go back to work some more on the Modal section*/
 
-.modal {
+#productDetails, .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -532,7 +532,7 @@ a:active {
   background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+#productDetails, .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
@@ -540,14 +540,14 @@ a:active {
   width: 80%;
 }
 
-.close {
+#productDetails, .close {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
+#productDetails, .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
