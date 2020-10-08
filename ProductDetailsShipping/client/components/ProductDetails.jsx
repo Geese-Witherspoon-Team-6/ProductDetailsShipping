@@ -34,7 +34,7 @@ class ProductDetails extends React.Component {
   }
 
   renderAll() {
-    fetch(`/api/product/${this.state.id}`)
+    fetch(`http://127.0.0.1:3002/api/product/${this.state.id}`)
       .then(res => res.json())
       .then(data => this.setState({product: data[0]}));
   }
@@ -72,7 +72,7 @@ class ProductDetails extends React.Component {
   }
 
   renderShipping() {
-    fetch(`/api/shipping/${this.state.to}/${this.state.zipCode}`)
+    fetch(`http://127.0.0.1:3002/api/shipping/${this.state.to}/${this.state.zipCode}`)
     .then(res => res.json())
     .then(data => this.setState({shippingInfo: data[0]}));
   }

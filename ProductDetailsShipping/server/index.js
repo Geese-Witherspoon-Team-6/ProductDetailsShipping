@@ -5,7 +5,7 @@ const cors = require('cors');
 const Schemas = require('../db/Schemas.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3002;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
