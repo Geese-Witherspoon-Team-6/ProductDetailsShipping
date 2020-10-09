@@ -157,7 +157,7 @@ a:active {
   -moz-transform: scale(1.02,1.02);
 }
 
-.Description-Text {
+#productDetails .Description-Text {
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -166,7 +166,7 @@ a:active {
   margin-bottom: 4px;
 }
 
-.product-description {
+#productDetails .product-description {
   white-space: pre-wrap;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;
@@ -182,7 +182,7 @@ a:active {
   box-sizing: border-box;
 }
 
-.new-product-description {
+#productDetails .new-product-description {
   white-space: pre-wrap;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-weight: 300;

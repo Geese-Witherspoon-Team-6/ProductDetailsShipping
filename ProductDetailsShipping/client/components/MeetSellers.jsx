@@ -1,14 +1,15 @@
 import React from 'react';
+import {MeetYourSellersText, SellerUsernameBottom, SellerDetails, MeetSellersCreator, MessageCreatorButton} from './Styled/MeetSellers.js';
 
 const MeetSellers = (props) => (
   <div>
-    <div className="Meet-Your-Sellers-Text">Meet your sellers</div>
+    <MeetYourSellersText>Meet your sellers</MeetYourSellersText>
     <div className="Meet-Your-Sellers-Middle-Section">
       <img src={props.creatorImgUrl} className="Seller-Image" alt="seller_image"></img>
-      <div className="Seller-Username-Bottom">{props.creator}</div>
-      <div className="Seller-Details">Owner of <a href="#" className="MeetSellers-Creator">{props.creator}</a></div>
+      <SellerUsernameBottom>{props.creator}</SellerUsernameBottom>
+      <SellerDetails>Owner of <MeetSellersCreator>{props.creator}</MeetSellersCreator></SellerDetails>
     </div>
-    <button className="message-creator-button">Message</button>
+    <MessageCreatorButton>Message</MessageCreatorButton>
   </div>
 );
 

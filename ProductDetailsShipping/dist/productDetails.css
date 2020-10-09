@@ -1,0 +1,144 @@
+.Description-Text {
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 35px;
+  margin-bottom: 4px;
+}
+
+.product-description {
+  white-space: pre-wrap;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+
+  transition: height 1s;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  height: 150px;
+  width: 300px;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+.new-product-description {
+  white-space: pre-wrap;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+
+  transition: height 1s;
+  height: 300px;
+  width: 300px;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+#show-product-description-button {
+  cursor: pointer;
+  display: block;
+  margin-top: 6px;
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+#hide-product-description-button {
+  cursor: pointer;
+  display: none;
+  margin-top: 6px;
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+#show-product-description-button:hover {
+  transition: opacity 0.5s, background-color 0.5s;
+  background-color: #E1E4E7;
+  opacity: 0.6;
+}
+
+#hide-product-description-button:hover {
+  transition: opacity 0.5s, background-color 0.5s;
+  background-color: #E1E4E7;
+  opacity: 0.6;
+}
+
+/* If there is more time I can go back to work some more on the Modal section*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Seller-Image {
+  height: 80px !important;
+  width: 75px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  margin-right: 6px;
+  float: left;
+}

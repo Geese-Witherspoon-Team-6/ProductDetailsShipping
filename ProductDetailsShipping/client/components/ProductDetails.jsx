@@ -4,6 +4,7 @@ import QuantityDropDown from './QuantityDropDown.jsx';
 import ShowLessMore from './ShowLessMore.jsx';
 import Shipping from './Shipping.jsx';
 import MeetSellers from './MeetSellers.jsx';
+import {CreatorNameTop, CreatorNameBoxTop, CreatorSalesBoxTop, CreatorSalesTop, Star, ProductTitleBoxTop, Filled, ProductPrice, GSTIncluded} from "./Styled/Main.js";
 
 class ProductDetails extends React.Component {
   constructor (props) {
@@ -80,18 +81,18 @@ class ProductDetails extends React.Component {
   render() {
     return (
       <div>
-        <div className="CreatorName-Box-Top"> <a href="#" className="CreatorName-Top">{this.state.product.creator}</a> </div>
-        <div className="CreatorSales-Box-Top"> <a href="#" className="CreatorSales-Top">{this.state.product.totalSales + ' sales'}</a>
-        <div className="star">
-          <span className="filled" dangerouslySetInnerHTML={this.renderStars(this.state.product.reviews)}></span>
-        </div>
-        </div>
+        <CreatorNameBoxTop> <CreatorNameTop>{this.state.product.creator}</CreatorNameTop> </CreatorNameBoxTop>
+        <CreatorSalesBoxTop> <CreatorSalesTop>{this.state.product.totalSales + ' sales'}</CreatorSalesTop>
+          <Star>
+            <Filled dangerouslySetInnerHTML={this.renderStars(this.state.product.reviews)}></Filled>
+          </Star>
+        </CreatorSalesBoxTop>
 
-        <div className="ProductTitle-Box-Top">{this.state.product.productName}</div>
+        <ProductTitleBoxTop>{this.state.product.productName}</ProductTitleBoxTop>
 
-        <div className="Product-Price">{'$' + Number(this.state.product.price).toFixed(2)}</div>
+        <ProductPrice>{'$' + Number(this.state.product.price).toFixed(2)}</ProductPrice>
 
-        <div className="GST-Included">GST included (where applicable)</div>
+        <GSTIncluded>GST included (where applicable)</GSTIncluded>
 
         <QuantityDropDown handleCheckoutQuantity={this.handleCheckoutQuantity}/>
         <ShowLessMore product={this.state.product}/>

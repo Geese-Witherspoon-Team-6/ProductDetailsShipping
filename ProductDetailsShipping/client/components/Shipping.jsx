@@ -1,4 +1,5 @@
 import React from 'react';
+import {ReadyInContainer, ShippingText, ShippingText2, FromContainer, CostToShipContainer, CountryBarContainer, CountryText, CountryDropdownBar, ZipBarContainer, ZipCode, ReturnTextBottom, ShopPolicyButton} from './Styled/Shipping.js';
 
 class Shipping extends React.Component {
   constructor(props) {
@@ -12,52 +13,52 @@ class Shipping extends React.Component {
 
   render() {
     return (<div>
-      <div className="Ready-In-Container">
-        <div className="Shipping-Text"> Ready to ship in </div>
-        <div className="Shipping-Text-2">{this.props.shippingInfo.ready}</div>
-      </div>
+      <ReadyInContainer>
+        <ShippingText> Ready to ship in </ShippingText>
+        <ShippingText2>{this.props.shippingInfo.ready}</ShippingText2>
+      </ReadyInContainer>
 
-      <div className="From-Container">
-        <div className="Shipping-Text"> From </div>
-        <div className="Shipping-Text-2">{this.props.shippingInfo.from}</div>
-      </div>
+      <FromContainer>
+        <ShippingText> From </ShippingText>
+        <ShippingText2>{this.props.shippingInfo.from}</ShippingText2>
+      </FromContainer>
 
-      <div className="Cost-To-Ship-Container">
-        <div className="Shipping-Text"> Cost to ship </div>
-        <div className="Shipping-Text-2">{'$' + Number(this.props.shippingInfo.cost).toFixed(2)}</div>
-      </div>
+      <CostToShipContainer>
+        <ShippingText> Cost to ship </ShippingText>
+        <ShippingText2>{'$' + Number(this.props.shippingInfo.cost).toFixed(2)}</ShippingText2>
+      </CostToShipContainer>
 
-      <div className="Country-Bar-Container">
-        <div className="Country-Text">Country</div>
+      <CountryBarContainer>
+        <CountryText>Country</CountryText>
         <form>
-          <select className="Country-Dropdown-Bar" value={this.state.value} onChange={this.props.handleCheckoutCountry}>
+          <CountryDropdownBar value={this.state.value} onChange={this.props.handleCheckoutCountry}>
             <option value="Australia">Australia</option>
             <option value="Canada">Canada</option>
             <option value="France">France</option>
             <option value="Germany">Germany</option>
             <option value="Greece">Greece</option>
-          </select>
+          </CountryDropdownBar>
         </form>
-       </div>
+       </CountryBarContainer>
 
-      <div className="Zip-Bar-Container">
-        <div className="Country-Text">Zip or postal code</div>
+      <ZipBarContainer>
+        <CountryText>Zip or postal code</CountryText>
         <form>
-        <input className="zipCode" type="text" onChange={this.props.handleCheckoutZip}></input>
+        <ZipCode type="text" onChange={this.props.handleCheckoutZip}></ZipCode>
         </form>
-      </div>
+      </ZipBarContainer>
 
-      <div className="Return-Text-Bottom">
+      <ReturnTextBottom>
         <div>Returns accepted</div>
         <div>Exceptions may apply.</div>
-      </div>
+      </ReturnTextBottom>
 
-      <button className="shop-policy-button" onClick={() => {
+      <ShopPolicyButton onClick={() => {
         var modal = document.getElementById("myModal");
         var span = document.getElementsByClassName("close")[0];
         modal.style.display = "block";
       }
-      }>View Shop policies</button>
+      }>View Shop policies</ShopPolicyButton>
 
       <div id="myModal" className="modal">
         <div className="modal-content">

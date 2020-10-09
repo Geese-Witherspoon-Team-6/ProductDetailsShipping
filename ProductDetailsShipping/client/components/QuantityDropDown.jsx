@@ -1,4 +1,5 @@
 import React from 'react';
+import {QuantityDropdownLabel, QuantityDropdownBar, AddToCartButton} from './Styled/QuantityDropDown.js';
 
 class QuantityDropDown extends React.Component {
   constructor(props) {
@@ -24,18 +25,18 @@ class QuantityDropDown extends React.Component {
   render() {
     return (<div>
       <form>
-        <div className="Quantity-Dropdown-Label">
-          Quantity </div>
-          <select className="Quantity-Dropdown-Bar" value={this.state.value} onChange={this.changeQuantity}>
+        <QuantityDropdownLabel>
+          Quantity </QuantityDropdownLabel>
+          <QuantityDropdownBar value={this.state.value} onChange={this.changeQuantity}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-          </select>
+          </QuantityDropdownBar>
        </form>
 
-       <button className="Add-To-Cart-Button" onClick={this.sendQuantity}> Add to cart </button>
+       <AddToCartButton onClick={this.sendQuantity}> Add to cart </AddToCartButton>
     </div>);
   };
 };
