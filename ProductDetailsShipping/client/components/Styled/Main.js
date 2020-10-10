@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const CreatorNameTop = styled.a`
+export const CreatorNameTop = styled.div`
     color: black;
 
     &:link {text-decoration: none;}
@@ -12,6 +12,7 @@ export const CreatorNameTop = styled.a`
     font-size: 16px;
     line-height: 28px;
     text-align: left;
+    cursor: pointer;
   `;
 
 export const CreatorNameBoxTop = styled.div`
@@ -23,14 +24,21 @@ export const CreatorSalesBoxTop = styled.div`
     margin-bottom: 12px;
   `;
 
-export const CreatorSalesTop = styled.a`
+export const CreatorSalesTop = styled.div`
+    color: black;
+
+    &:link {text-decoration: none;}
+    &:visited {text-decoration: none;}
+    &:hover {text-decoration: underline;}
+    &:active {text-decoration: underline;}
+
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
     font-size: 14px;
     line-height: 1.4;
-    -webkit-font-smoothing: antialiased;
     text-align: left;
     float:left;
     width: 87px;
+    cursor: pointer;
   `;
 
 export const Star = styled.div`

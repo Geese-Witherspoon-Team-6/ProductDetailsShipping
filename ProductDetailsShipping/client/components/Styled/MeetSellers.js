@@ -34,7 +34,7 @@ export const SellerDetails = styled.div`
   left: 10px;
 `;
 
-export const MeetSellersCreator = styled.a`
+export const MeetSellersCreator = styled.div`
   text-decoration: underline;
   transition: opacity 200ms ease-out;
   position: relative;
@@ -46,7 +46,11 @@ export const MeetSellersCreator = styled.a`
   font-size: 13px;
   line-height: 18px;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+
+  &:link {text-decoration: none;}
+  &:visited {text-decoration: none;}
+  &:hover {text-decoration: underline;}
+  &:active {text-decoration: underline;}
 `;
 
 export const MessageCreatorButton = styled.button`
